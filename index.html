@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felipe Sepúlveda | Portfolio</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #020617;
+    color: white;
+}
+
+/* LOGO */
+.logo {
+    color: #38bdf8;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    border-bottom: 1px solid rgba(56,189,248,0.2);
+}
+
+.nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: #38bdf8;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(56,189,248,0.15);
+    color: #38bdf8;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 50px;
+}
+
+.hero span {
+    color: #38bdf8;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.hero-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #38bdf8;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #38bdf8;
+    color: black;
+}
+
+.metrics {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.metric h2 {
+    color: #38bdf8;
+}
+
+/* SECTION */
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.section h2 {
+    color: white;
+    font-size: 32px;
+}
+
+/* 🔥 SKILLS PRO */
+.skills-header {
+    margin-bottom: 30px;
+}
+
+small {
+    color: #38bdf8;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+    gap: 20px;
+}
+
+.skill {
+    background: #0b1220;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(56,189,248,0.1);
+    transition: 0.3s;
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+    border: 1px solid #38bdf8;
+    box-shadow: 0 0 15px rgba(56,189,248,0.2);
+}
+
+.skill-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.skill h3 {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.skill p {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.skill-badge {
+    background: rgba(40, 144, 189, 0.2);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+
+/* FEATURED */
+.featured {
+    background: #0f172a;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+/* TAGS */
+.tags {
+    margin-top: 15px;
+}
+.tag {
+    display: inline-block;
+    background: rgba(56,189,248,0.15);
+    color: #38bdf8;
+    padding: 5px 10px;
+    margin: 4px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+/* CAROUSEL */
+.carousel {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 10px;
+}
+
+.carousel img {
+    width: 220px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* BOTONES */
+button {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-card {
+    width: 180px;
+    margin: 10px auto;
+}
+
+.featured-buttons button:last-child {
+    border: 1px solid #38bdf8;
+    background: white;
+}
+
+.featured-buttons button:last-child:hover {
+    background: #38bdf8;
+    color: black;
+}
+
+/* CARDS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #0f172a;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+/* EXPERIENCE */
+.exp {
+    background: #0f172a;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+
+    border: 2px solid rgba(56,189,248,0.3); 
+    box-shadow: 0 0 10px rgba(56,189,248,0.1);
+    transition: 0.3s;
+}
+
+.exp:hover {
+    border: 1px solid #38bdf8;
+    box-shadow: 0 0 20px rgba(56,189,248,0.3);
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+    padding: 30px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.contact-item {
+    min-width: 180px;
+    max-width: 280px;
+    padding: 14px 20px;
+    border-radius: 12px;
+
+    background: #0b1220;
+    color: white;
+    text-decoration: none;
+
+    border: 1px solid rgba(56,189,248,0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 14px;
+    transition: all 0.25s ease;
+}
+
+/* 🔥 HOVER MEJORADO */
+.contact-item:hover {
+    color: #38bdf8;
+    border: 1px solid #38bdf8;
+    background: rgba(56,189,248,0.08);
+    box-shadow: 0 0 12px rgba(56,189,248,0.25);
+    transform: translateY(-3px);
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
+    <div class="logo">FS</div>
+    <div>
+        <a href="#skills">Skills</a>
+        <a href="#featured">Featured</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+
+    <div class="badge">Available for hire</div>
+
+    <h1>Felipe <span>Sepúlveda</span></h1>
+
+    <p>
+        Data Scientist & Data Engineer — Machine Learning, ETL Pipelines and real-world business solutions.
+    </p>
+
+    <div class="hero-buttons">
+        <button class="hero-btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+            View Projects
+        </button>
+
+        <button class="hero-btn" onclick="openCV()">
+            View CV
+        </button>
+
+        <button class="hero-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            Contact Me
+        </button>
+    </div>
+
+    <div class="metrics">
+        <div class="metric">
+            <h2>5+</h2>
+            <p>ML Projects</p>
+        </div>
+        <div class="metric">
+            <h2>3+</h2>
+            <p>Systems Built</p>
+        </div>
+        <div class="metric">
+            <h2>98%</h2>
+            <p>Model Accuracy</p>
+        </div>
+        <div class="metric">
+            <h2>2+</h2>
+            <p>Years Experience</p>
+        </div>
+    </div>
+</div>
+
+<!-- SKILLS -->
+<div class="section" id="skills">
+
+    <div class="skills-header">
+        <small>TECHNICAL STACK</small>
+        <h2>Skills & Technologies</h2>
+    </div>
+
+    <div class="skills">
+
+        <div class="skill"><div class="skill-icon">🐍</div><h3>Python</h3><p>Advanced</p></div>
+        <div class="skill"><div class="skill-icon">🐼</div><h3>Pandas / NumPy</h3><p>Advanced</p></div>
+        <div class="skill"><div class="skill-icon">🤖</div><h3>Scikit-learn</h3><p>Advanced</p></div>
+        <div class="skill"><div class="skill-icon">🗄️</div><h3>SQL</h3><p>Intermediate</p></div>
+        <div class="skill"><div class="skill-icon">☁️</div><h3>AWS</h3><p>Intermediate</p></div>
+        <div class="skill"><div class="skill-icon">⚡</div><h3>FastAPI</h3><p>Intermediate</p></div>
+        <div class="skill"><div class="skill-icon">📊</div><h3>Power BI</h3><p>Intermediate</p></div>
+        <div class="skill"><div class="skill-icon">🔗</div><h3>ETL Pipelines</h3><p>Advanced</p></div>
+        <div class="skill"><div class="skill-icon">☁️</div><h3>GCP</h3><p>Intermediate</p></div>
+        <div class="skill"><div class="skill-icon">📊</div><h3>Looker</h3><p>Intermediate</p></div>
+
+    </div>
+</div>
+
+<!-- FEATURED -->
+<div class="section" id="featured">
+    <small>BEST WORK</small>
+    <h2>Featured Project</h2>
+
+    <div class="featured">
+
+        <div class="carousel">
+            <div class="carousel-track" id="track">
+                <img src="imagenes/fraud/headline_bank.png">
+                <img src="imagenes/fraud/web_fraud_detection.jpeg">
+                <img src="imagenes/fraud/estructure_project.png">
+                <img src="imagenes/fraud/data_fraud_cod1.jpg">
+                <img src="imagenes/fraud/data_fraud_cod2.jpg">
+                <img src="imagenes/fraud/data_fraud_cod3.jpg">
+                <img src="imagenes/fraud/headline_bank.png">
+                <img src="imagenes/fraud/web_fraud_detection.jpeg">
+            </div>
+        </div>
+
+        <h3>Bank Fraud Detection System</h3>
+        <p>Random Forest model trained on 284K real transactions. ROC-AUC 0.975.
+        Full pipeline with SMOTE, FastAPI and production web app.</p>
+
+        <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">SMOTE</span>
+            <span class="tag">Pandas</span>
+        </div>
+
+            <div class="featured-buttons">
+                    <button class="btn-card"
+                    onclick="window.open('https://github.com/pipesito1/bank-fraud-detection-ml')">
+                    View on GitHub
+                </button>
+
+                <button class="btn-card"
+                    onclick="window.open('https://fraud-frontend-r91e.onrender.com')">
+                    Live Demo
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section" id="projects">
+    <small>PORTFOLIO</small>
+    <h2>All Projects</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="imagenes/recommender/recomendacion_de_video_juegos.jpg">
+            <div class="card-content">
+                <h3>Recommendation System</h3>
+                <p>Game recommendation engine based on cosine similarity.</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">NLP</span>
+                    <span class="tag">FastAPI</span>
+                </div>
+                <button class="btn-card"
+                onclick="window.open('https://github.com/pipesito1/bank-fraud-detection-ml')">
+                View on GitHub</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="imagenes/pipeline/portada_IBM_project(1).png">
+            <div class="card-content">
+                <h3>AWS Data Pipeline</h3>
+                <p>Full ETL pipeline deployed on AWS with automation.</p>
+                <div class="tags">
+                    <span class="tag">AWS</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">ETL</span>
+                    <span class="tag">PySpark</span>
+                </div>
+                <button class="btn-card"
+                onclick="window.open('https://github.com/pipesito1/aws-data-engineering-bank-pipeline')">
+                View on GitHub</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="imagenes/taxis/datalogic_banner_taxis.jpg">
+            <div class="card-content">
+                <h3>NY Taxis ML</h3>
+                <p>ML for optimization of electric taxis in New York using real data.</p>
+                <div class="tags">
+                    <span class="tag">ML</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Pandas</span>
+                </div>
+                <button class="btn-card"
+                onclick="window.open('https://github.com/pipesito1')">
+                View on GitHub</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="imagenes/accidentes/siniestros_viales_banner.jpg">
+            <div class="card-content">
+                <h3>Road Accidents</h3>
+                <p>Road accident analysis with interactive visualizations and KPIs.</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Power Bi</span>
+                    <span class="tag">EDA</span>
+                </div>
+                <button class="btn-card"
+                onclick="window.open('https://github.com/pipesito1/Proyecto_siniestros_viales')">
+                View on GitHub</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="imagenes/football_over25/project_cover.png">
+            <div class="card-content">
+                <h3>Football Prediction</h3>
+                <p>Goal prediction app for football matches using ML and Streamlit.</p>
+                <div class="tags">
+                    <span class="tag">ML</span>
+                    <span class="tag">Streamlit</span>
+                    <span class="tag">Python</span>
+                </div>
+                <button class="btn-card"
+                onclick="window.open('https://github.com/pipesito1/football-over25-prediction')">
+                View on GitHub</button>
+
+                <button class="btn-card"
+                onclick="window.open('https://football-over25-prediction-f5bwhjenxgqzdhhappmqxky.streamlit.app/')">
+                Live Demo</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section" id="experience">
+    <small>WORK HISTORY</small>
+    <h2>Experience</h2>
+
+    <div class="exp">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h3>Data Engineer — MOX</h3>
+            <span class="tag">2024 – 2025 · Remote</span>
+        </div>
+        <p>Develop a prediction model to estimate income of individuals outside the formal labor market, using machine learning algorithms focused on this population.</p>
+        <p>Analyze and process relevant data to discover key patterns that improve the accuracy of income estimation.</p>
+        <p>Define and categorize socioeconomic levels based on projected income, including a confidence interval and generating recommendations that can support financial decisions.</p>
+        <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">EDA</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">ETL</span>
+                    <span class="tag">GCP</span>
+                    <span class="tag">ML</span>
+            </div>
+    </div>
+
+    <div class="exp">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h3>Data Analyst — Zumma</h3>
+            <span class="tag">2023 – 2025 · Remote</span>
+        </div>
+        <p>Supported the collection, cleaning, and analysis of large datasets to generate actionable insights for strategic decision-making.</p>
+        <p>- Developed reports and interactive dashboards to visualize key metrics and support business strategies.</p>
+        <p>- Automated data processes to streamline workflows and reduce processing time.</p>
+        <P>- Collaborated with cross-functional teams to identify business needs and solve problems through data analysis.</P>
+        <P>- Worked with tools such as Python, SQL, Power BI, and Excel for data analysis, visualization, and reporting.</P>
+
+        <P>- Gained experience handling relational databases and cloud-based data tools, including BigQuery.
+        </p>
+        <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">EDA</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">ETL</span>
+                    <span class="tag">GCP</span>
+                    <span class="tag">BigQuery</span>
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact" id="contact">
+    <h2>Let's work together</h2>
+    <p>Available for freelance projects, remote roles and collaborations.</p>
+
+    <div class="contact-links">
+
+        <a href="mailto:jhesuafelipe24@gmail.com" class="contact-item">
+            📧 <span>jhesuafelipe24@gmail.com</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/felipe-sepulveda-21684a115/" target="_blank" class="contact-item">
+        💼 <span>LinkedIn</span>
+        </a>
+
+        <a href="https://github.com/pipesito1" target="_blank" class="contact-item">
+            🐙 <span>GitHub</span>
+        </a>
+
+        <a href="https://www.upwork.com/freelancers/~01385dc3c4f6dbe41f/" target="_blank" class="contact-item">
+            💼 <span>Upwork</span>
+        </a>
+
+    </div>
+</div>
+
+<script>
+let position = 0;
+const track = document.getElementById("track");
+
+function moveCarousel() {
+    position -= 1;
+    track.style.transform = `translateX(${position}px)`;
+    if (Math.abs(position) >= track.scrollWidth / 2) {
+        position = 0;
+    }
+}
+
+setInterval(moveCarousel, 20);
+
+function openCV() {
+    window.open(
+        'Felipe_Sepulveda_CV.pdf',
+        '_blank',
+        'width=900,height=700,scrollbars=yes,resizable=yes'
+    );
+}
+</script>
+</body>
+</html>
